@@ -1,0 +1,34 @@
+version: 2
+
+models:
+- name: type
+  description: schema.org の型。1行が1型。
+  access: public
+  columns:
+  - name: version
+    data_tests: [not_null]
+  - name: name
+    data_tests: [not_null, unique]
+- name: property
+  description: schema.org のプロパティ。1行が1プロパティ。
+  access: public
+  columns:
+  - name: version
+    data_tests: [not_null]
+  - name: name
+    data_tests: [not_null, unique]
+  - name: snake_case_name
+    data_tests: [not_null]
+- name: type_property
+  description: 型が直接持てるプロパティ。1行が1型の1プロパティ。
+  access: public
+  columns:
+  - name: type_name
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('type')
+          field: name
+  - name: property_name
+    data_tests: [not_null]

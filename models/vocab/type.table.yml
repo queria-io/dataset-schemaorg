@@ -1,0 +1,29 @@
+schema: vocab
+name: type
+title: 型
+description: schema.org の型（Place、PostalAddress、Organization など）。1行が1型。pending などの拡張を除いた本体の語だけを持つ。
+published: true
+sources:
+  - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
+fields:
+  - name: version
+    title: 版
+  - name: name
+    title: 型名
+  - name: uri
+    title: URI
+  - name: description
+    title: 説明
+    description: 原典の説明から HTML のタグを落としたもの。英語
+  - name: parent
+    title: 親の型
+    description: 親が複数あるときは | でつなぐ
+  - name: enumeration_type
+    title: 列挙の型
+    description: この型が列挙値のとき、その列挙の型
+  - name: equivalent_class
+    title: 同等のクラス
+    description: schema.org の外の同じ意味のクラスの URI
+  - name: superseded_by
+    title: 後継の型
+    description: 値があれば非推奨で、こちらを使う
