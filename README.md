@@ -4,7 +4,7 @@
 
 Queria のデータセットは、一般のデータの列名をこの語彙のプロパティ名（snake_case）に揃えています。
 日本の公的データは [dataset-gif](https://github.com/queria-io/dataset-gif) の語彙に揃えます。
-決め方は [docs.queria.io の説明の書き分け](https://docs.queria.io/publish/writing-descriptions)にあります。
+決め方は [docs.queria.io のデータセットの規約](https://docs.queria.io/publish/conventions#列名)にあります。
 
 ## データ出典
 
