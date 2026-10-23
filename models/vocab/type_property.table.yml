@@ -1,0 +1,14 @@
+schema: vocab
+name: type_property
+title: 型とプロパティの対応
+description: 型が直接持てるプロパティ。1行が1型の1プロパティ。vocab.property の domain を開いたもので、親の型から受け継ぐプロパティは含まない。
+published: true
+sources:
+  - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
+fields:
+  - name: version
+    title: 版
+  - name: type_name
+    title: 型名
+  - name: property_name
+    title: プロパティ名

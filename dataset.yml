@@ -1,0 +1,43 @@
+spec_version: "0.1"
+name: schemaorg
+title: schema.org の語彙
+description: |-
+  schema.org が定める型とプロパティの語彙。検索エンジン各社が共同で作り、Web ページの構造化データで世界的に使われている。毎月、schema.org の最新の版（GitHub のタグ）から取り直す。
+  一般のデータの列名を世界標準の語に揃えたいとき、ある概念の英語の呼び方を探したいときに使う。Queria のデータセットは、一般のデータの列名をこの語彙のプロパティ名（snake_case）に揃えている。日本の公的データは gif データセットの語彙に揃える。
+
+  出典: schema.org（https://schema.org/、https://github.com/schemaorg/schemaorg）。各版の schemaorg-current-https-types.csv と schemaorg-current-https-properties.csv を Queria が表に変換して作成した。
+keywords:
+  - 語彙
+  - メタデータ
+  - データ標準
+  - 構造化データ
+  - schema.org
+homepage: https://github.com/queria-io/dataset-schemaorg
+language: en
+
+licenses:
+  - id: CC-BY-SA-3.0
+    spdx: CC-BY-SA-3.0
+    url: https://creativecommons.org/licenses/by-sa/3.0/
+    title: Creative Commons Attribution-ShareAlike 3.0 Unported
+    commercial_use: true
+    share_alike: true
+    attribution_required: true
+
+sources:
+  - title: schema.org
+    path: https://schema.org/
+  - title: schemaorg/schemaorg
+    path: https://github.com/schemaorg/schemaorg
+
+contributors:
+  - title: schema.org
+    path: https://schema.org/
+    roles: [rightsHolder]
+
+update_frequency: monthly
+cover: 🌐
+
+schemas:
+  - name: vocab
+    title: 語彙
