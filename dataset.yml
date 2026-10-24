@@ -14,6 +14,7 @@ keywords:
   - schema.org
 homepage: https://github.com/queria-io/dataset-schemaorg
 language: en
+themes: [other]
 
 licenses:
   - id: CC-BY-SA-3.0
