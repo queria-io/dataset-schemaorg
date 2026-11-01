@@ -2,7 +2,6 @@ schema: vocab
 name: type
 title: 型
 description: schema.org の型（Place、PostalAddress、Organization など）。1行が1型。pending などの拡張を除いた本体の語だけを持つ。
-published: true
 sources:
   - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
 fields:
