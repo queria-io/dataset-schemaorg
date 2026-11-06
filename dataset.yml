@@ -4,10 +4,9 @@
 name: schemaorg
 title: schema.org の語彙
 description: |-
-  schema.org が定める型とプロパティの語彙。検索エンジン各社が共同で作り、Web ページの構造化データで世界的に使われている。毎月、schema.org の最新の版（GitHub のタグ）から取り直す。
-  一般のデータの列名を世界標準の語に揃えたいとき、ある概念の英語の呼び方を探したいときに使う。Queria のデータセットは、一般のデータの列名をこの語彙のプロパティ名（snake_case）に揃えている。日本の公的データは gif データセットの語彙に揃える。
+  schema.org が定める型とプロパティの語彙です。Web ページの構造化データで世界的に使われている語彙で、毎月 schema.org の最新のバージョンから取得し直します。
 
-  出典: schema.org（https://schema.org/、https://github.com/schemaorg/schemaorg）。各版の schemaorg-current-https-types.csv と schemaorg-current-https-properties.csv を Queria が表に変換して作成した。
+  出典：schema.org。Queria が加工したものです。
 keywords:
   - 語彙
   - メタデータ
