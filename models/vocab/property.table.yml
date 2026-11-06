@@ -1,12 +1,15 @@
 schema: vocab
 name: property
 title: プロパティ
-description: "schema.org のプロパティ（postalCode、latitude、addressRegion など）。1行が1プロパティ。snake_case_name は Queria の列名にするときの形で、一般のデータの列名はこれに揃える。"
+description: |-
+  schema.org のプロパティ（postalCode、latitude など）です。1 行が 1 プロパティです。
+
+  - snake_case_name は Queria の列名にするときの形です
 sources:
   - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
 fields:
   - name: version
-    title: 版
+    title: バージョン
   - name: name
     title: プロパティ名
   - name: uri
@@ -16,13 +19,13 @@ fields:
     description: name を snake_case にしたもの（postalCode → postal_code）
   - name: description
     title: 説明
-    description: 原典の説明から HTML のタグを落としたもの。英語
+    description: 原典の説明（英語）から HTML のタグを除いたもの
   - name: domain
     title: 持てる型
-    description: このプロパティを持てる型。| でつなぐ。1 行ずつにしたものが vocab.type_property
+    description: このプロパティを持てる型。| 区切り
   - name: range
     title: 値の型
-    description: 値に入れられる型。| でつなぐ
+    description: 値に入れられる型。| 区切り
   - name: parent
     title: 親のプロパティ
   - name: equivalent_property
@@ -32,4 +35,4 @@ fields:
     title: 逆のプロパティ
   - name: superseded_by
     title: 後継のプロパティ
-    description: 値があれば非推奨で、こちらを使う
+    description: 値があれば非推奨です。こちらを使います
