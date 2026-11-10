@@ -7,6 +7,7 @@ description: |-
   - snake_case_name は Queria の列名にするときの形です
 sources:
   - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
+primary_key: [name]
 fields:
   - name: version
     title: バージョン

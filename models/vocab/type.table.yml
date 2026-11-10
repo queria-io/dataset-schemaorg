@@ -7,6 +7,7 @@ description: |-
   - pending などの拡張を除いた本体の語だけを収録しています
 sources:
   - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
+primary_key: [name]
 fields:
   - name: version
     title: バージョン
