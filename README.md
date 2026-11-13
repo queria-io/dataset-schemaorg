@@ -45,9 +45,9 @@ ORDER BY p.name;
 ## ビルド
 
 ```bash
+git submodule update --init
 uv sync
-uv run python main.py          # 語彙の取得と dbt build（公開ストレージへの書き込みは queria sync が行う）
-./scripts/build.sh             # queria sync（pull → ビルド → push）
+scripts/build.sh   # fdl checkout → python main.py → fdl commit
 ```
 
 PR では `Build` ワークフローが公開せずに取得と dbt build だけを実行します。
