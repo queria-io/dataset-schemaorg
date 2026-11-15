@@ -10,5 +10,6 @@ select
     {{ schemaorg_names('subPropertyOf') }} as parent,
     nullif(equivalentProperty, '') as equivalent_property,
     {{ schemaorg_names('inverseOf') }} as inverse_of,
-    {{ schemaorg_names('supersededBy') }} as superseded_by
+    {{ schemaorg_names('supersededBy') }} as superseded_by,
+    filename as source_path
 from {{ ref('raw_properties') }}

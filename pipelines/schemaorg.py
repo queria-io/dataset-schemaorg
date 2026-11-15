@@ -7,22 +7,25 @@ schemaorg-current-https-{types,properties}.csv（pending などの拡張を除�
 出力:
 - data/schemaorg/types.csv（1行 = 1 型）
 - data/schemaorg/properties.csv（1行 = 1 プロパティ）
+- data/schemaorg/source_file.parquet（取得したファイルの記録）
 
 データソース: schema.org https://github.com/schemaorg/schemaorg
 """
 
 import logging
 import re
-import shutil
 import subprocess
-import tempfile
 from pathlib import Path
+
+from pipelines.source_file import write_source_files
+from shared.fetch import fetch_file
 
 logger = logging.getLogger("pipelines")
 
 REPO = "schemaorg/schemaorg"
 OUTPUT_DIR = Path("data/schemaorg")
 FILES = {"types": "types", "properties": "properties"}
+USER_AGENT = "dataset-schemaorg (+https://github.com/queria-io/dataset-schemaorg)"
 
 
 def version_of(tag: str) -> str | None:
@@ -40,27 +43,16 @@ def latest_tag() -> tuple[str, str]:
     return max(((t, v) for t, v in tags if v), key=lambda tv: tuple(int(n) for n in tv[1].split(".")))
 
 
-def checkout(tag: str, version: str, dest: Path) -> Path:
-    # リポジトリは全版の配布物を抱えていて大きいので、その版のディレクトリだけ取る
-    subprocess.run(
-        ["git", "-c", "advice.detachedHead=false", "clone", "--quiet", "--depth", "1", "--filter=blob:none", "--sparse",
-         "--branch", tag, f"https://github.com/{REPO}.git", str(dest)],
-        check=True,
-    )
-    subprocess.run(["git", "-C", str(dest), "sparse-checkout", "set", f"data/releases/{version}"], check=True)
-    return dest / "data" / "releases" / version
-
-
 def download_schemaorg(output_dir: Path = OUTPUT_DIR) -> str:
     tag, version = latest_tag()
     logger.info("  schema.org %s (%s)", version, tag)
     output_dir.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory() as tmp:
-        release = checkout(tag, version, Path(tmp) / "schemaorg")
-        for name, kind in FILES.items():
-            src = release / f"schemaorg-current-https-{kind}.csv"
-            if not src.exists():
-                raise SystemExit(f"{REPO}@{tag}: {src.name} が無い")
-            shutil.copyfile(src, output_dir / f"{name}.csv")
+    page = f"https://github.com/{REPO}/tree/{tag}/data/releases/{version}"
+    rows = []
+    for name, kind in FILES.items():
+        url = f"https://raw.githubusercontent.com/{REPO}/{tag}/data/releases/{version}/schemaorg-current-https-{kind}.csv"
+        path = output_dir / f"{name}.csv"
+        rows.append({**fetch_file(url, path, user_agent=USER_AGENT), "page_url": page, "paths": [str(path)]})
+    write_source_files(rows, output_dir / "source_file.parquet")
     (output_dir / "version.txt").write_text(version)
     return version
