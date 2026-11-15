@@ -17,6 +17,7 @@ clean-targets:
 models:
   schemaorg:
     +database: schemaorg
+    +materialized: table
     vocab:
       raw:
         +materialized: table
