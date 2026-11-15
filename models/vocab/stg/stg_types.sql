@@ -7,5 +7,6 @@ select
     {{ schemaorg_names('subTypeOf') }} as parent,
     {{ schemaorg_names('enumerationtype') }} as enumeration_type,
     nullif(equivalentClass, '') as equivalent_class,
-    {{ schemaorg_names('supersededBy') }} as superseded_by
+    {{ schemaorg_names('supersededBy') }} as superseded_by,
+    filename as source_path
 from {{ ref('raw_types') }}
