@@ -1,4 +1,0 @@
-schema: vocab
-name: raw_types
-description: schema.org の型（取得したままの形）
-annotations: { queria: { published: false } }

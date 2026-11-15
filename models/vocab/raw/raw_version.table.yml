@@ -1,4 +1,0 @@
-schema: vocab
-name: raw_version
-description: schema.org のバージョン番号（取得したままの形）
-annotations: { queria: { published: false } }

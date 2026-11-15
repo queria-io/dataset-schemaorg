@@ -1,4 +1,0 @@
-schema: vocab
-name: raw_properties
-description: schema.org のプロパティ（取得したままの形）
-annotations: { queria: { published: false } }
