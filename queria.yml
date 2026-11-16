@@ -1,6 +1,4 @@
-# この dataset.yml は fdl commit が読む（FDL の dataset.json を YAML で書いたもの）。
-# 表の説明は models/ の *.table.yml に書く。表と列の型・NULL・行数は fdl commit がカタログから埋める。
-# Queria だけの項目（テーマ・カバー・列の意味）は annotations.queria に書く。
+$schema: https://queria.io/schemas/dataset/v1.json
 name: schemaorg
 title: schema.org の語彙
 description: |-
@@ -15,7 +13,6 @@ keywords:
   - schema.org
 homepage: https://github.com/queria-io/dataset-schemaorg
 language: en
-
 licenses:
   - id: CC-BY-SA-3.0
     spdx: CC-BY-SA-3.0
@@ -37,13 +34,9 @@ contributors:
     roles: [rightsHolder]
 
 update_frequency: monthly
-
 schemas:
   - name: vocab
     title: 語彙
 
-annotations:
-  queria:
-    themes: [other]
-    cover: 🌐
-...
+themes: [other]
+cover: 🌐

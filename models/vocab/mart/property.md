@@ -1,5 +1,6 @@
-schema: vocab
-name: property
+---
+$schema: https://queria.io/schemas/table/v1.json
+table: vocab.property
 title: プロパティ
 description: |-
   schema.org のプロパティ（postalCode、latitude など）です。1 行が 1 プロパティです。
@@ -40,3 +41,4 @@ fields:
   - name: source_sha256
     title: 元のファイルの SHA-256
     description: この行を読んだファイルの SHA-256 です。source_file の sha256 に当たります
+---

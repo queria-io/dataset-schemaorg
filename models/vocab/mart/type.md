@@ -1,5 +1,6 @@
-schema: vocab
-name: type
+---
+$schema: https://queria.io/schemas/table/v1.json
+table: vocab.type
 title: 型
 description: |-
   schema.org の型（Place、Organization など）です。1 行が 1 型です。
@@ -33,3 +34,4 @@ fields:
   - name: source_sha256
     title: 元のファイルの SHA-256
     description: この行を読んだファイルの SHA-256 です。source_file の sha256 に当たります
+---

@@ -1,5 +1,6 @@
-schema: vocab
-name: type_property
+---
+$schema: https://queria.io/schemas/table/v1.json
+table: vocab.type_property
 title: 型とプロパティの対応
 description: |-
   型が直接持てるプロパティです。1 行が 1 型の 1 プロパティです。
@@ -17,3 +18,4 @@ fields:
   - name: source_sha256
     title: 元のファイルの SHA-256
     description: この行を読んだファイルの SHA-256 です。source_file の sha256 に当たります
+---
