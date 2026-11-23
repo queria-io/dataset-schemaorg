@@ -5,6 +5,7 @@ description: |-
   schema.org が定める型とプロパティの語彙です。Web ページの構造化データで世界的に使われている語彙で、毎月 schema.org の最新のバージョンから取得し直します。
 
   出典：schema.org。Queria が加工したものです。
+image: cover.png
 topics:
   - 語彙
   - メタデータ
