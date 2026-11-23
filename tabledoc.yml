@@ -12,7 +12,6 @@ topics:
   - データ標準
   - 構造化データ
   - schema.org
-homepage: https://github.com/queria-io/dataset-schemaorg
 language: en
 licenses:
   - id: CC-BY-SA-3.0
