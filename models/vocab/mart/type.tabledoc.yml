@@ -1,15 +1,12 @@
----
-$schema: https://queria.io/schemas/table/v1.json
-table: vocab.type
+$schema: https://tabledoc.queria.io/schemas/table/v1.json
 title: 型
 description: |-
   schema.org の型（Place、Organization など）です。1 行が 1 型です。
 
   - pending などの拡張を除いた本体の語だけを収録しています
-sources:
-  - path: https://github.com/schemaorg/schemaorg/tree/main/data/releases
+sources: [releases]
 primary_key: [name]
-fields:
+columns:
   - name: version
     title: バージョン
   - name: name
@@ -34,4 +31,3 @@ fields:
   - name: source_sha256
     title: 元のファイルの SHA-256
     description: この行を読んだファイルの SHA-256 です。source_file の sha256 に当たります
----
