@@ -1,11 +1,11 @@
-$schema: https://queria.io/schemas/dataset/v1.json
+$schema: https://tabledoc.queria.io/schemas/dataset/v1.json
 name: schemaorg
 title: schema.org の語彙
 description: |-
   schema.org が定める型とプロパティの語彙です。Web ページの構造化データで世界的に使われている語彙で、毎月 schema.org の最新のバージョンから取得し直します。
 
   出典：schema.org。Queria が加工したものです。
-keywords:
+topics:
   - 語彙
   - メタデータ
   - データ標準
@@ -23,13 +23,16 @@ licenses:
     attribution_required: true
 
 sources:
-  - title: schema.org
+  - id: schema
+    title: schema.org
     path: https://schema.org/
-  - title: schemaorg/schemaorg
+  - id: schemaorg
+    title: schemaorg/schemaorg
     path: https://github.com/schemaorg/schemaorg
 
 contributors:
-  - title: schema.org
+  - id: schema
+    title: schema.org
     path: https://schema.org/
     roles: [rightsHolder]
 
@@ -38,5 +41,3 @@ schemas:
   - name: vocab
     title: 語彙
 
-themes: [other]
-cover: 🌐
