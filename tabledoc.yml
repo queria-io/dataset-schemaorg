@@ -16,7 +16,6 @@ homepage: https://github.com/queria-io/dataset-schemaorg
 language: en
 licenses:
   - id: CC-BY-SA-3.0
-    spdx: CC-BY-SA-3.0
     url: https://creativecommons.org/licenses/by-sa/3.0/
     title: Creative Commons Attribution-ShareAlike 3.0 Unported
     commercial_use: true
@@ -26,15 +25,15 @@ licenses:
 sources:
   - id: schema
     title: schema.org
-    path: https://schema.org/
+    url: https://schema.org/
   - id: schemaorg
     title: schemaorg/schemaorg
-    path: https://github.com/schemaorg/schemaorg
+    url: https://github.com/schemaorg/schemaorg
 
 contributors:
   - id: schema
     title: schema.org
-    path: https://schema.org/
+    url: https://schema.org/
     roles: [rightsHolder]
 
 update_frequency: monthly
