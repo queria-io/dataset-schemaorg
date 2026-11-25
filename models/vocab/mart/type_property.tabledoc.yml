@@ -10,6 +10,7 @@ columns:
     title: バージョン
   - name: type_name
     title: 型名
+    dimension: categorical
   - name: property_name
     title: プロパティ名
   - name: source_sha256
